@@ -13,6 +13,7 @@ import pandas as pd
 from pyecharts import options as opts
 from pyecharts.charts import Bar
 from streamlit_echarts import st_pyecharts
+# from streamlit_echarts import st_echarts
 
 
 # Se recibe la imagen y el modelo, devuelve la predicción
@@ -222,17 +223,28 @@ def prediction():
             Bar()
             .add_xaxis(["NO DIABETICO", "PRE DIABÉTICO", "DIABÉTICO"])
             .add_yaxis(
-                "ON / OFF", [round(nodiabetico*100, 2), round(prediabetico*100, 2), round(diabetico*100, 2)]
+                "", [round(nodiabetico*100, 2), round(prediabetico*100, 2), round(diabetico*100, 2)]
             )
             .set_global_opts(
                 title_opts=opts.TitleOpts(
                     title="Predicción del estado de salud", subtitle="% valores en porcentajes"
                 ),
-                
             )
         )
         st_pyecharts(pie_chart)
- 
+
+        # options = {
+        #     "xAxis": {
+        #         "type": "category",
+        #         "data": ["NO DIABETICO", "PRE DIABÉTICO", "DIABÉTICO"],
+        #     },
+        #     "yAxis": {"type": "value"},
+        #     "series": [
+        #         {"data": [round(nodiabetico*100, 2), round(prediabetico*100, 2), round(diabetico*100, 2)], "type": "pie"}
+        #     ],
+        # }
+        # st_echarts(options=options)
+
 
 if __name__ == '__main__':
 
