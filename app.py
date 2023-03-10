@@ -13,7 +13,7 @@ import pandas as pd
 from pyecharts import options as opts
 from pyecharts.charts import Bar
 from streamlit_echarts import st_pyecharts
-# from streamlit_echarts import st_echarts
+
 
 
 # Se recibe la imagen y el modelo, devuelve la predicción
@@ -217,7 +217,7 @@ def prediction():
         )
         st.dataframe(df)
 
-        # st.bar_chart(df)
+        # st.bar_chart(df, x=None, y=str,use_container_width=True)
 
         pie_chart = (
             Bar()
@@ -233,17 +233,6 @@ def prediction():
         )
         st_pyecharts(pie_chart)
 
-        # options = {
-        #     "xAxis": {
-        #         "type": "category",
-        #         "data": ["NO DIABETICO", "PRE DIABÉTICO", "DIABÉTICO"],
-        #     },
-        #     "yAxis": {"type": "value"},
-        #     "series": [
-        #         {"data": [round(nodiabetico*100, 2), round(prediabetico*100, 2), round(diabetico*100, 2)], "type": "pie"}
-        #     ],
-        # }
-        # st_echarts(options=options)
 
 
 if __name__ == '__main__':
