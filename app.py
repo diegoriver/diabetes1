@@ -216,22 +216,22 @@ def prediction():
         )
         st.dataframe(df)
 
-        st.bar_chart(df)
+        # st.bar_chart(df)
 
-        b = (
+        pie_chart = (
             Bar()
-            .add_xaxis(["NO DIABETICOS", "PRE DIABÉTICO", "DIABÉTICO"])
+            .add_xaxis(["NO DIABETICO", "PRE DIABÉTICO", "DIABÉTICO"])
             .add_yaxis(
-                "ON / OFF", [21.2, 20.4, 10.3]
+                "ON / OFF", [round(nodiabetico*100, 2), round(prediabetico*100, 2), round(diabetico*100, 2)]
             )
             .set_global_opts(
                 title_opts=opts.TitleOpts(
-                    title="Predicción del la red neuronal", subtitle="% valores en porcentajes"
+                    title="Predicción del estado de salud", subtitle="% valores en porcentajes"
                 ),
                 
             )
         )
-        st_pyecharts(b)
+        st_pyecharts(pie_chart)
  
 
 if __name__ == '__main__':
