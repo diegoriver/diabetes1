@@ -208,14 +208,14 @@ def prediction():
 
         st.success(f"{resultado_final}")
 
-        # df = pd.DataFrame(
-        #     {
-        #         'NO DIABÉTICO': f"{round(nodiabetico*100, 2)}%",
-        #         'PRE DIABÉTICO': f"{round(prediabetico*100, 2)}%",
-        #         'DIABÉTICO': f"{round(diabetico*100, 2)}%"
-        #     }, index=["Resultado"]
-        # )
-        # st.dataframe(df)
+        df = pd.DataFrame(
+            {
+                'NO DIABÉTICO': f"{round(nodiabetico*100, 2)}%",
+                'PRE DIABÉTICO': f"{round(prediabetico*100, 2)}%",
+                'DIABÉTICO': f"{round(diabetico*100, 2)}%"
+            }, index=["Resultado"]
+        )
+        st.dataframe(df)
 
         # st.bar_chart(df)
 
