@@ -14,6 +14,8 @@ from pyecharts import options as opts
 from pyecharts.charts import Bar
 from streamlit_echarts import st_pyecharts
 
+import altair as alt
+from streamlit_vega_lite import vega_lite_component, altair_component
 
 
 # Se recibe la imagen y el modelo, devuelve la predicción
@@ -143,7 +145,7 @@ def prediction():
     if Education_formulario == 'Universidad 1 año a 3 años (Alguna universidad o escuela técnica)': Education = 5
     if Education_formulario == 'Universidad 4 años o más (graduado universitario)': Education = 6
 
-    Income_formulario = st.radio( "21.Ingresos: ",
+    Income_formulario = st.radio( "21.Ingresos [USD]: ",
     ('Menos de 10.000', 
     'De 10.000 a 16.000', 
     'De 17.000 a 22.000', 
@@ -217,7 +219,7 @@ def prediction():
         )
         st.dataframe(df)
 
-        # st.bar_chart(df, x=None, y=str,use_container_width=True)
+        st.bar_chart(df)
 
         pie_chart = (
             Bar()
