@@ -145,7 +145,7 @@ def prediction():
     if Education_formulario == 'Universidad 1 año a 3 años (Alguna universidad o escuela técnica)': Education = 5
     if Education_formulario == 'Universidad 4 años o más (graduado universitario)': Education = 6
 
-    Income_formulario = st.radio( "21.Ingresos [USD]: ",
+    Income_formulario = st.radio( "21.Ingresos - USD: ",
     ('Menos de 10.000', 
     'De 10.000 a 16.000', 
     'De 17.000 a 22.000', 
