@@ -14,8 +14,6 @@ from pyecharts import options as opts
 from pyecharts.charts import Bar
 from streamlit_echarts import st_pyecharts
 
-import altair as alt
-from streamlit_vega_lite import vega_lite_component, altair_component
 
 
 # Se recibe la imagen y el modelo, devuelve la predicción
